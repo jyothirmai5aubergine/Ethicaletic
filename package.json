@@ -5,18 +5,19 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "stage": "VITE_APP_ENV=stage vite",
-    "prod": "VITE_APP_ENV=prod vite",
+    "stage": "vite --mode staging",
+    "prod": "vite --mode production",
     "preview": "vite preview",
     "build": "tsc && vite build",
-    "build-dev": "VITE_APP_ENV=dev tsc && vite build",
-    "build-stage": "VITE_APP_ENV=stage tsc && vite build",
-    "build-prod": "VITE_APP_ENV=prod tsc && vite build"
+    "build-dev": "tsc && vite build --mode development",
+    "build-stage": "tsc && vite build --mode staging",
+    "build-prod": "tsc && vite build --mode production"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-redux": "^8.0.5"
+    "react-redux": "^8.0.5",
+    "vite-tsconfig-paths": "^4.0.5"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
