@@ -1,0 +1,4 @@
+{
+  "pattern":  "^(master|develop|release)$|^(feature|fe|framework|(bug|hot)?fix)/.+$|^sprint-.+$/g",
+  "errorMsg": "Incorrect branch name"
+}

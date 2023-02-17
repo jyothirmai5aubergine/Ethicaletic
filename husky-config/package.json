@@ -1,0 +1,21 @@
+{
+  "name": "husky-configure",
+  "version": "1.0.0",
+  "description": "husky configuration",
+  "main": "index.js",
+  "scripts": {
+    "all":"npm run husky && npm run lint && npm run branch && npm run commit",
+    "husky": "cd - && npx husky-init && npm install && sed -i -e 's/npm test//g' .husky/pre-commit && cd ..",
+    "lint": "cd - && sed -i -e 's/npm run lint//g' .husky/pre-commit && npx husky add .husky/pre-commit 'npm run lint'",
+    "branch": "cd - && sed -i -e 's/npx validate-branch-name//g' .husky/pre-commit && npx husky add .husky/pre-commit 'npx validate-branch-name' && cp -v husky-config/.validate-branch-namerc.json .validate-branch-namerc.json",
+    "commit": "cd - && npm install --save-dev @commitlint/config-conventional @commitlint/cli && cp -v husky-config/commitlint.config.cjs commitlint.config.cjs && npx husky add .husky/commit-msg  'npx --no -- commitlint --edit ${1}'",
+    
+    "other-all":"npm run other-husky && npm run other-lint && npm run other-branch && npm run other-commit",
+    "other-husky": "cd .. && npx husky-init && npm install",
+    "other-lint": "cd ..  && npx husky add .husky/pre-commit \"npm run lint\"",
+    "other-branch": "cd ..  && npx husky add .husky/pre-commit \"npx validate-branch-name\" && copy .\\husky-config\\.validate-branch-namerc.json .validate-branch-namerc.json",
+    "other-commit": "cd .. &&  npm install --save-dev @commitlint/config-conventional @commitlint/cli && copy .\\husky-config\\commitlint.config.cjs commitlint.config.cjs && npx husky add .husky/commit-msg  \"npx --no -- commitlint --edit ${1}\""
+  },
+  "author": "Ashwani",
+  "license": "ISC"
+}
