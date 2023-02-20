@@ -1,0 +1,12 @@
+{
+  "name": "eslint-config",
+  "version": "1.0.0",
+  "description": "eslint config",
+  "main": "index.js",
+  "scripts": {
+    "install": "npm install --prefix ../ eslint --save-dev && npm install --prefix ../ eslint-plugin-import-helpers --save-dev && npm install --prefix ../ eslint-plugin-react-hooks --save-dev && npm i --prefix ../ eslint-config-standard-with-typescript --save-dev && cd .. && eslint --init",
+    "install-other": "npm install --prefix ../  eslint --save-dev && npm install --prefix ../  eslint-plugin-import-helpers --save-dev && npm install --prefix ../ eslint-plugin-import-helpers --save-dev && npm i --prefix ../ eslint-config-standard-with-typescript --save-dev && npm install --prefix ../ eslint-plugin-react-hooks --save-dev && cd .. && npm init @eslint/config"
+  },
+  "author": "Ashwani",
+  "license": "ISC"
+}
